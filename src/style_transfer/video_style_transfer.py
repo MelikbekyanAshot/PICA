@@ -10,8 +10,8 @@ from PIL import Image
 from natsort import natsorted
 from subprocess import Popen, PIPE
 
-from algorithms import image_enhancer as ie
-from algorithms.style_transfer import StyleTransfer
+from algorithm import image_enhancer as ie
+from algorithm.style_transfer import StyleTransfer
 
 ASSEMBLED = 'ASSEMBLED'
 
@@ -22,7 +22,7 @@ def get_style_transfer() -> StyleTransfer:
     return StyleTransfer()
 
 
-class VideoApp:
+class VideoStyleTransfer:
     def __init__(self, src_video=None, style_img=None):
         if 'video_status' not in st.session_state:
             st.session_state['video_status'] = None

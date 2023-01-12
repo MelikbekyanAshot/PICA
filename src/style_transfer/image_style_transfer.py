@@ -4,8 +4,8 @@ import random
 import streamlit as st
 from PIL import Image
 
-from algorithms import image_enhancer as ie
-from algorithms.style_transfer import StyleTransfer
+from algorithm import image_enhancer as ie
+from algorithm.style_transfer import StyleTransfer
 
 
 @st.experimental_singleton
@@ -14,7 +14,7 @@ def get_style_transfer() -> StyleTransfer:
     return StyleTransfer()
 
 
-class ImageApp:
+class ImageStyleTransfer:
     def __init__(self, source_img=None, style_img=None):
         super().__init__()
         self.source_img = source_img
@@ -75,7 +75,8 @@ class ImageApp:
         """Display slider.
         Returns:
             intensity value (int)"""
-        return st.slider(label='Interpolation', min_value=0, max_value=100, value=50, step=1)
+        return st.slider(label='Interpolation', min_value=0, max_value=100, value=50, step=1,
+                         key=random.randint(1, 100))
 
     def history(self):
         """Displays history of generated images"""
@@ -90,7 +91,7 @@ class ImageApp:
             cols = st.columns(cols_in_grid)
             for index, image in enumerate(stylized_images):
                 with cols[index % cols_in_grid]:
-                    st.image(stylized_images[index], caption='Stylized image', use_column_width='always')
+                    st.image(stylized_images[index], caption=f'Stylized image {index}', use_column_width='always')
                     with open(image.filename, 'rb') as file:
                         with st.container():
                             st.download_button(label='Download',
