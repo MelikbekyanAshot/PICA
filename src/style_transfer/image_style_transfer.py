@@ -76,7 +76,7 @@ class ImageStyleTransfer:
         Returns:
             intensity value (int)"""
         return st.slider(label='Interpolation', min_value=0, max_value=100, value=50, step=1,
-                         key=random.randint(1, 100))
+                         key='slider')
 
     def history(self):
         """Displays history of generated images"""
