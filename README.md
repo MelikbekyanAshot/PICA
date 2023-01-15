@@ -3,7 +3,7 @@ Pica – is an open source web app for image and video style transfer. It works 
 
 Click on badge below to go to the website
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://melikbekyanashot-pica-main-app-odd3su.streamlitapp.com/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://pica-dev.streamlitapp.com/)
 
 ## Examples
 ### Image style transfer examples
